@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<comment>Adobe AEM demo for Touch-optimized UI Dialog Conversion tool</comment>
+<entry key="createdBy">gknob</entry>
+<entry key="name">com.adobe.cq.demo.touchui.dialogconversion.examples</entry>
+<entry key="created">2015-02-03T15:19:43.757+0100</entry>
+<entry key="groupId">com.adobe.cq.demo</entry>
+<entry key="version">1.0.0-SNAPSHOT</entry>
+<entry key="requiresRoot">false</entry>
+<entry key="group">aem/demo</entry>
+<entry key="description">Adobe AEM demo for Touch-optimized UI Dialog Conversion tool</entry>
+<entry key="artifactId">com.adobe.cq.demo.touchui.dialogconversion.examples</entry>
+<entry key="path">/etc/packages/aem/demo/com.adobe.cq.demo.touchui.dialogconversion.examples.zip</entry>
+</properties>
