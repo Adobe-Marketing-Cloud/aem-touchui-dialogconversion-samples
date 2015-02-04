@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.adobe.cq.demo</groupId>
+        <artifactId>com.adobe.cq.demo.touchui.dialogconversion</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+
+    <groupId>com.adobe.cq.demo</groupId>
+    <artifactId>com.adobe.cq.demo.touchui.dialogconversion.content</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>content-package</packaging>
+    <name>Adobe AEM Dialog Conversion Tool samples content</name>
+    <description></description>
+
+    <build>
+        <resources>
+            <resource>
+                <directory>jcr_root</directory>
+                <filtering>false</filtering>
+                <excludes>
+                    <exclude>**/.vlt</exclude>
+                    <exclude>**/.vltignore</exclude>
+                </excludes>
+            </resource>
+        </resources>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>2.6</version>
+                <configuration>
+                    <includeEmptyDirs>true</includeEmptyDirs>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>com.day.jcr.vault</groupId>
+                <artifactId>content-package-maven-plugin</artifactId>
+                <version>0.0.20</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <group>aem/demo</group>
+                    <filterSource>META-INF/vault/filter.xml</filterSource>
+                    <targetURL>http://${crx.host}:${crx.port}/crx/packmgr/service.jsp</targetURL>
+                    <failOnError>true</failOnError>
+                    <username>${crx.username}</username>
+                    <password>${crx.password}</password>
+
+                    <embeddeds>
+                        <embedded>
+                            <groupId>com.adobe.cq.demo</groupId>
+                            <artifactId>com.adobe.cq.demo.touchui.dialogconversion.bundle</artifactId>
+                            <target>/libs/cq/dialogconversion/install</target>
+                            <filter>true</filter>
+                        </embedded>
+                    </embeddeds>
+
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.adobe.cq.demo</groupId>
+            <artifactId>com.adobe.cq.demo.touchui.dialogconversion.bundle</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
+
+</project>

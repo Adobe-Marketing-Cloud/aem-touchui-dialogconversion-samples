@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.adobe.cq.demo</groupId>
+        <artifactId>com.adobe.cq.demo.touchui.dialogconversion</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+
+    <groupId>com.adobe.cq.demo</groupId>
+    <artifactId>com.adobe.cq.demo.touchui.dialogconversion.bundle</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>bundle</packaging>
+    <name>Adobe AEM Dialog Conversion Tool samples bundle</name>
+    <description></description>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-scr-plugin</artifactId>
+                <version>1.20.0</version>
+                <executions>
+                    <execution>
+                        <id>generate-scr-scrdescriptor</id>
+                        <goals>
+                            <goal>scr</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.sling</groupId>
+                <artifactId>maven-sling-plugin</artifactId>
+                <configuration>
+                    <slingUrlSuffix>/apps/cq/dialogconversion/install</slingUrlSuffix>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <extensions>true</extensions>
+                <configuration>
+                    <instructions>
+                        <Bundle-Category>cq5</Bundle-Category>
+                    </instructions>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>org.apache.felix</groupId>
+            <artifactId>org.apache.felix.scr.annotations</artifactId>
+            <version>1.9.8</version>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.jcr</groupId>
+            <artifactId>jcr</artifactId>
+            <version>2.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.adobe.cq</groupId>
+            <artifactId>cq-dialog-conversion</artifactId>
+            <version>1.0.2</version>
+        </dependency>
+        <dependency>
+            <groupId>com.day.cq</groupId>
+            <artifactId>cq-commons</artifactId>
+            <version>5.7.14</version>
+        </dependency>
+
+    </dependencies>
+
+</project>
